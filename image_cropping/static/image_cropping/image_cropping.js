@@ -5,7 +5,7 @@ var image_cropping = (function ($) {
         var $this = $(this),
         // find the image field corresponding to this cropping value
         // by stripping the last part of our id and appending the image field name
-            field = $this.attr('name').replace($this.data('my-name'), $this.data('image-field')),
+            field = $this.attr('name').replace(new RegExp($this.data('my-name')+'$'), $this.data('image-field')),
 
         // there should only be one file field we're referencing but in special cases
         // there can be several. Deal with it gracefully.
